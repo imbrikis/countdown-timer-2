@@ -25,7 +25,6 @@ input::placeholder {
 }
 
 .input-event-name, .datepicker {
-  display: block;
   margin: 0 auto;
   width: 37rem;
   background: #D8D8D8;
@@ -35,21 +34,23 @@ input::placeholder {
 }
 
 .input-event-name {
+  display: block;
   height: 3.3rem;
   margin-top: 2rem;
-  padding-left: 16px;
 
   font-family: Manrope;
   font-size: 16px;
   color: rgba(36, 36, 36, 0.75);
   letter-spacing: 0.12em;
+  text-align: center;
 }
 
 .input-event-name:focus {
   outline-width: 0;
 }
 
-.datepicker {
+/* Datepicker is being styled by overridden Material UI CSS */
+/* .datepicker {
   margin-top: 2rem;
   display: flex;
   align-items: center;
@@ -63,15 +64,11 @@ input::placeholder {
   width: 37rem;
   height: 6.7rem;
   overflow: hidden;
-}
+} 
 
 .datepicker:hover {
   cursor: pointer;
-}
-
-.react-datepicker-wrapper {
-  display: block;
-}
+} */
 
 .button-wrapper {
   width: 16.6rem;
@@ -87,7 +84,7 @@ input::placeholder {
   background: #EF7F7F;
   color: rgba(255, 255, 255, 0.87);
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0.16em;
   display: flex;
   align-items: center;
