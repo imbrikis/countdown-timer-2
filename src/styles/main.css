@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700&display=swap');
+@import 'App.css';
+@import 'AddEvent.css'; 
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #D8D8D8;
+  overflow: overlay;
+}
