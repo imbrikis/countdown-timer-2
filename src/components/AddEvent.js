@@ -4,8 +4,9 @@ import TextField from '@material-ui/core/TextField'
 
 const AddEvent = ({ addCountdown }) => {
 
-  const [startDate, setStartDate] = useState(new Date());
-  const [input, setInput] = useState('')
+  const [dateInput, setDateInput] = useState('')
+  const [titleInput, setTitleInput] = useState('')
+  // const [countdowns, setCountdowns] = useState([])
 
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,12 +21,10 @@ const AddEvent = ({ addCountdown }) => {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '1rem 2rem',
-      border: 'none',
       fontFamily: 'Manrope',
       fontSize: '1.6rem',
       color: 'rgba(36, 36, 36, 0.75)',
       textAlign: 'center',
-      width: '37rem',
       height: '6.7rem',
       overflow: 'hidden'
     }
@@ -33,27 +32,32 @@ const AddEvent = ({ addCountdown }) => {
 
   const classes = useStyles()
 
-  // const inputChange = e => {
-  //   setInput(e)
-  //   console.log(input)
-  // }
-
-  // const submitCountdownDate = e => {
-  //   e.preventDefault()
-  //   return (
-  //     document.querySelector('.datepicker').value !== '' ? 
-  //     addCountdown(document.querySelector('.datepicker').value) :
-  //     null
-  //   )
-  // }
+  const submitCountdown = () => {
+    return ((dateInput && titleInput) ? 
+    (
+      console.log(dateInput, titleInput),
+      addCountdown(titleInput, dateInput),
+      setTitleInput(''),
+      setDateInput('')
+    ) :
+    console.log(`one or more entries are empty - date:${dateInput}, title:${titleInput}`))
+    // e.preventDefault()
+    // return (
+    //   document.querySelector('.datepicker').value !== '' ? 
+    //   addCountdown(document.querySelector('.datepicker').value) :
+    //   null
+    // )
+    
+  }
 
   return (
     <div className="add-event-container">
       <form>
         <div className="input-cal-wrapper">
-          <input className="input-event-name" type="text" placeholder="event name (36 char limit)" />
+          <input className="input-event-name" type="text" placeholder="event name (36 char limit)" value={titleInput} onChange={e => setTitleInput(e.target.value)} />
             <TextField
               id="datetime-local"
+              value={dateInput}
               classes={{
                 root: classes.root
               }}
@@ -61,13 +65,15 @@ const AddEvent = ({ addCountdown }) => {
               InputLabelProps={{
                 shrink: true,
               }}
+              onChange={e => setDateInput(e.target.value)}
             />
         </div>
         <div className="button-wrapper">
           <div 
-            disabled={!input}
+            disabled={!dateInput || !titleInput}
             type="submit"
             className="btn-submit"
+            onClick={submitCountdown}
           >Start</div>
         </div>
       </form>

@@ -81,7 +81,7 @@ input::placeholder {
   width: 11rem;
   height: 11rem;
   border-radius: 50%;
-  background: #EF7F7F;
+  background: #3ad144;
   color: rgba(255, 255, 255, 0.87);
   font-size: 2rem;
   font-weight: 300;
@@ -103,4 +103,12 @@ input::placeholder {
 
 .btn-submit:focus {
   user-select: none;
+}
+
+.btn-submit[disabled],
+.btn-submit[disabled]:hover,
+.btn-submit[disabled]:active {
+  background: #fca596;
+  cursor: default;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
 }

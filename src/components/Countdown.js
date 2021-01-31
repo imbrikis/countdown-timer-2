@@ -1,9 +1,12 @@
 import React from 'react'
 import './Countdown.css'
 
-const Countdown = ({ countdownDate }) => {
+const Countdown = ({ titleInput, dateInput }) => {
   return (
-    <div className="countdown">{countdownDate}</div>
+    <div className="countdown">
+      <h1>{titleInput}</h1>
+      <h1>{dateInput}</h1>
+    </div>
   )
 }
 

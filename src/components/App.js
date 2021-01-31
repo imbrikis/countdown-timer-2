@@ -6,16 +6,9 @@ const App = () => {
 
   const [countdowns, setCountdowns] = useState([])
 
-  const addCountdown = countdown => {
-    setCountdowns([...countdowns, countdown])
+  const addCountdown = (titleInput, dateInput) => {
+    setCountdowns([...countdowns, {titleInput, dateInput}])
   }
-
-  const renderCountdowns = 
-    countdowns.map(item => {
-      return (
-        <Countdown countdownDate={item} />
-      )
-    })
 
   return (
     <div className="app-container">
@@ -23,7 +16,13 @@ const App = () => {
         <h1>Countdown App</h1>
       </div>
       <AddEvent addCountdown={addCountdown} />
-      <div className="countdown-container">{renderCountdowns}</div>
+      <div className="countdown-container">
+        {countdowns.map(item => {
+          return (
+            <Countdown titleInput={item.titleInput} dateInput={item.dateInput} />
+          )
+        })}
+      </div>
     </div>
   )
 }
