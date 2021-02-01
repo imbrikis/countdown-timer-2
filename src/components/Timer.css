@@ -1,0 +1,18 @@
+.timer-container {
+  position: relative;
+  width: 100%;
+  height: 9.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.countdown-digits {
+  font-size: 5.1rem;
+}
+
+.digit-descriptors {
+  font-size: 0.9rem;
+  text-align: center;
+}

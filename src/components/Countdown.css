@@ -5,14 +5,32 @@
 
 .countdown {
   width: 100%;
-  height: 13.8rem;
+  height: 16rem;
   background: #D8D8D8;
   mix-blend-mode: normal;
   box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.17), -8px -8px 20px rgba(255, 255, 255, 0.51);
   border-radius: 13px;
-  display: flex;
 }
 
 .countdown:not(:last-child) {
   margin-bottom: 3.6rem;
+}
+
+.countdown-title {
+  width: 100%;
+  height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.date-description {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.6);
 }
