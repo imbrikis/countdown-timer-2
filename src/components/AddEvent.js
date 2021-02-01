@@ -32,28 +32,27 @@ const AddEvent = ({ addCountdown }) => {
 
   const classes = useStyles()
 
-  const submitCountdown = () => {
+  const handleClick = () => {
     return ((dateInput && titleInput) ? 
     (
       addCountdown(titleInput, dateInput),
       setTitleInput(''),
       setDateInput('')
     ) :
-    console.log(`one or more entries are empty - date:${dateInput}, title:${titleInput}`))
-    // e.preventDefault()
-    // return (
-    //   document.querySelector('.datepicker').value !== '' ? 
-    //   addCountdown(document.querySelector('.datepicker').value) :
-    //   null
-    // )
-    
+    console.log(`one or more entries are empty - date:${dateInput}, title:${titleInput}`)) 
   }
 
   return (
     <div className="add-event-container">
       <form>
         <div className="input-cal-wrapper">
-          <input className="input-event-name" type="text" placeholder="event name (36 char limit)" value={titleInput} onChange={e => setTitleInput(e.target.value)} />
+          <input 
+            className="input-event-name" 
+            type="text" 
+            placeholder="event name (36 char limit)" // Set this limit : CORRECT THIS
+            value={titleInput} 
+            onChange={e => setTitleInput(e.target.value)}
+          />
             <TextField
               id="datetime-local"
               value={dateInput}
@@ -72,7 +71,7 @@ const AddEvent = ({ addCountdown }) => {
             disabled={!dateInput || !titleInput}
             type="submit"
             className="btn-submit"
-            onClick={submitCountdown}
+            onClick={handleClick}
           >Start</div>
         </div>
       </form>

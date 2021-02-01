@@ -23,7 +23,7 @@ const Timer = ({ dateInput }) => {
     setTimerDigits({
       ...timerDigits,
       days : Math.floor(result / 86400000),
-      hours : formatDateTimeFields(Math.floor(result / 3600000) % 60),
+      hours : formatDateTimeFields(Math.floor(result / 3600000) % 60), // Rendering more than 23 hours : CORRECT THIS
       minutes : formatDateTimeFields(Math.floor(result / 60000) % 60),
       seconds : formatDateTimeFields(Math.floor(result / 1000) % 60)
     })
@@ -31,11 +31,7 @@ const Timer = ({ dateInput }) => {
 
   useEffect(() => {
     setInterval(calcTimerDigits(dateInput), 500)
-  }, [timerDigits])
-
-  // useEffect(() => {
-
-  // }, [timerDigits])
+  }, [timerDigits]) // This is rendering too many times : CORRECT THIS
 
   return (
     <div className="timer-container">
