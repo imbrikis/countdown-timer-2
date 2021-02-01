@@ -1,19 +1,54 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Timer.css'
 
-const Timer = ({ days, hours, minutes, seconds }) => {
+const Timer = ({ dateInput }) => {
+
+  const [timerDigits, setTimerDigits] = useState({
+    days: '',
+    hours: '',
+    minutes: '',
+    seconds: '',
+  })
+
+  // sets the hours, minutes, and seconds to 2 digits (prepends a zero if needed)
+  const formatDateTimeFields = d => {
+    let x = d.toString().split("")
+    x.unshift("0")
+    let result = x.slice(x.length - 2, x.length)
+    return result
+  }
+
+  const calcTimerDigits = i => {
+    let result = (new Date(dateInput).getTime()) - (new Date().getTime())
+    setTimerDigits({
+      ...timerDigits,
+      days : Math.floor(result / 86400000),
+      hours : formatDateTimeFields(Math.floor(result / 3600000) % 60),
+      minutes : formatDateTimeFields(Math.floor(result / 60000) % 60),
+      seconds : formatDateTimeFields(Math.floor(result / 1000) % 60)
+    })
+  }
+
+  useEffect(() => {
+    setInterval(calcTimerDigits(dateInput), 500)
+  }, [timerDigits])
+
+  // useEffect(() => {
+
+  // }, [timerDigits])
+
   return (
     <div className="timer-container">
       <table>
           <thead>
             <tr className="countdown-digits">
-              <th>{days ? days : "00"}</th>
+              <th>{timerDigits.days ? timerDigits.days : "00"}</th>
               <th>:</th>
-              <th>{hours ? hours : "00"}</th>
+              <th>{timerDigits.hours ? timerDigits.hours : "00"}</th>
               <th>:</th>
-              <th>{minutes ? minutes : "00"}</th>
+              <th>{timerDigits.minutes ? timerDigits.minutes : "00"}</th>
               <th>:</th>
-              <th>{seconds ? seconds : "00"}</th>
+              <th>{timerDigits.seconds ? timerDigits.seconds : "00"}</th>
             </tr>
           </thead>
           <tbody>

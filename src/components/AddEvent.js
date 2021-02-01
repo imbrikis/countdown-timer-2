@@ -35,7 +35,6 @@ const AddEvent = ({ addCountdown }) => {
   const submitCountdown = () => {
     return ((dateInput && titleInput) ? 
     (
-      console.log(dateInput, titleInput),
       addCountdown(titleInput, dateInput),
       setTitleInput(''),
       setDateInput('')
