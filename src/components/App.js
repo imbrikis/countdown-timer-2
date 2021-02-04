@@ -21,7 +21,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    db.collection('countdowns').onSnapshot(snapshot => {
+    db.collection('countdowns').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       setCountdowns(snapshot.docs.map(doc => doc.data().countdown))
     })
   }, [])
@@ -34,6 +34,7 @@ const App = () => {
       <AddEvent addCountdown={addCountdown} />
       <div className="countdowns-container">
         {countdowns.map(item => {
+          console.log(item)
           return (
             <Countdown 
               titleInput={item[0]} 

@@ -22,7 +22,7 @@ const Timer = ({ dateInput }) => {
     let result = (new Date(dateInput).getTime()) - (new Date().getTime())
     setTimerDigits({
       ...timerDigits,
-      days : Math.floor(result / 86400000) % 365,
+      days : Math.floor(result / 86400000),
       hours : formatDateTimeFields(Math.floor(result / 3600000) % 24), 
       minutes : formatDateTimeFields(Math.floor(result / 60000) % 60),
       seconds : formatDateTimeFields(Math.floor(result / 1000) % 60)

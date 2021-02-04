@@ -34,7 +34,6 @@ const AddEvent = ({ addCountdown }) => {
   const handleClick = () => {
     return ((dateInput && titleInput) ? 
     (
-      console.log(dateInput),
       addCountdown(titleInput, dateInput),
       setTitleInput(''),
       setDateInput('')
