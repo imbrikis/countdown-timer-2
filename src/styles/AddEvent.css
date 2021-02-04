@@ -4,7 +4,7 @@
   margin-top: 1.9rem;
   background: #D8D8D8;
   mix-blend-mode: normal;
-  box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.17), -8px -8px 20px rgba(255, 255, 255, 0.51);
+  box-shadow: 7px 7px 14px rgba(0, 0, 0, 0.08), -7px -7px 14px rgba(255, 255, 255, 0.30);
   border-radius: 13px;
   display: flex;
 }
@@ -28,7 +28,7 @@ input::placeholder {
   margin: 0 auto;
   width: 37rem;
   background: #D8D8D8;
-  box-shadow: inset -4px -5px 14px rgba(255, 255, 255, 0.5), inset 2px 2px 11px rgba(0, 0, 0, 0.25);
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.32), inset 2px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 1rem;
   border: none;
 }
@@ -108,7 +108,7 @@ input::placeholder {
 .btn-submit[disabled],
 .btn-submit[disabled]:hover,
 .btn-submit[disabled]:active {
-  background: #fca596;
+  background: #EF7F7F;
   cursor: default;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.35);
 }

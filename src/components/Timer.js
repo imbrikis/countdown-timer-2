@@ -22,16 +22,17 @@ const Timer = ({ dateInput }) => {
     let result = (new Date(dateInput).getTime()) - (new Date().getTime())
     setTimerDigits({
       ...timerDigits,
-      days : Math.floor(result / 86400000),
-      hours : formatDateTimeFields(Math.floor(result / 3600000) % 60), // Rendering more than 23 hours : CORRECT THIS
+      days : Math.floor(result / 86400000) % 365,
+      hours : formatDateTimeFields(Math.floor(result / 3600000) % 24), 
       minutes : formatDateTimeFields(Math.floor(result / 60000) % 60),
       seconds : formatDateTimeFields(Math.floor(result / 1000) % 60)
     })
   }
 
   useEffect(() => {
-    setInterval(calcTimerDigits(dateInput), 500)
-  }, [timerDigits]) // This is rendering too many times : CORRECT THIS
+    const interval = setInterval(() => calcTimerDigits(dateInput), 500)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <div className="timer-container">

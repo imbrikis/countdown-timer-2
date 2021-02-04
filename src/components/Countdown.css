@@ -1,19 +1,24 @@
-.countdown-container {
+.countdowns-container {
   width: 100%;
   margin-top: 9.5rem;
 }
 
 .countdown {
+  position: relative;
   width: 100%;
   height: 16rem;
-  background: #D8D8D8;
+  background: rgb(201, 231, 201); /* R value should start at 201 and end at 232, G value start at 231 and end at 202 (the closer you get to the deadline) */
   mix-blend-mode: normal;
-  box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.17), -8px -8px 20px rgba(255, 255, 255, 0.51);
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.32), inset 2px 2px 4px rgba(0, 0, 0, 0.14);
   border-radius: 13px;
 }
 
 .countdown:not(:last-child) {
   margin-bottom: 3.6rem;
+}
+
+.countdown:last-child {
+  margin-bottom: 5rem;
 }
 
 .countdown-title {
@@ -33,4 +38,21 @@
   margin-top: 0.5rem;
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.6);
+}
+
+.delete-icon {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.delete-icon:hover {
+  cursor: pointer;
+}
+
+.delete-icon:active {
+  color: rgba(0, 0, 0, 0.9);
 }

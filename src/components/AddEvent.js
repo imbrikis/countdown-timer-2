@@ -4,16 +4,12 @@ import TextField from '@material-ui/core/TextField'
 
 const AddEvent = ({ addCountdown }) => {
 
-  const [dateInput, setDateInput] = useState('')
-  const [titleInput, setTitleInput] = useState('')
-  // const [countdowns, setCountdowns] = useState([])
-
   const useStyles = makeStyles((theme) => ({
     root: {
       margin: '0 auto',
       width: '37rem',
       background: '#D8D8D8',
-      boxShadow: 'inset -4px -5px 14px rgba(255, 255, 255, 0.5), inset 2px 2px 11px rgba(0, 0, 0, 0.25)',
+      boxShadow: 'inset -2px -2px 4px rgba(255, 255, 255, 0.32), inset 2px 2px 4px rgba(0, 0, 0, 0.14)',
       borderRadius: '1rem',
       border: 'none',
       marginTop: '2rem',
@@ -32,9 +28,13 @@ const AddEvent = ({ addCountdown }) => {
 
   const classes = useStyles()
 
+  const [dateInput, setDateInput] = useState('')
+  const [titleInput, setTitleInput] = useState('')
+
   const handleClick = () => {
     return ((dateInput && titleInput) ? 
     (
+      console.log(dateInput),
       addCountdown(titleInput, dateInput),
       setTitleInput(''),
       setDateInput('')
