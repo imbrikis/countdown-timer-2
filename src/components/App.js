@@ -16,14 +16,10 @@ const App = () => {
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
   }
-
-  const deleteCountdown = () => {
-    console.log('gonna delete it...')
-  }
-
+  
   useEffect(() => {
     db.collection('countdowns').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-      setCountdowns(snapshot.docs.map(doc => doc.data()))
+      setCountdowns(snapshot.docs.map(doc => ({id: doc.id, countdown: doc.data()})))
     })
   }, [])
 
@@ -35,12 +31,10 @@ const App = () => {
       <AddEvent addCountdown={addCountdown} />
       <div className="countdowns-container">
         {countdowns.map(item => {
-          console.log(item)
           return (
-            <Countdown 
-              title={item.title} 
-              date={item.date} 
-              deleteCountdown={deleteCountdown}
+            <Countdown
+              item={item}
+              key={item.id}
             />
           )
         })}

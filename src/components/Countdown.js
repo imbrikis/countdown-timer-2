@@ -2,15 +2,16 @@ import React from 'react'
 import './Countdown.css'
 import Timer from './Timer'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForeverOutlined';
+import db from '../firebase'
 
-const Countdown = ({ title, date, deleteCountdown }) => {
+const Countdown = ({ item }) => {
 
   return (
     <div className="countdown">
-      <Timer date={date} />
-      <div className="countdown-title">{title}</div>
-      <div className="date-description">({new Date(date).toLocaleString()})</div>
-      <div className="delete-icon" onClick={() => deleteCountdown()} ><DeleteForeverIcon fontSize="large" /></div>
+      <Timer date={item.countdown.date} />
+      <div className="countdown-title">{item.countdown.title}</div>
+      <div className="date-description">({new Date(item.countdown.date).toLocaleString()})</div>
+      <div className="delete-icon" onClick={event => db.collection('countdowns').doc(item.id).delete()} ><DeleteForeverIcon fontSize="large" /></div>
     </div>
   )
 }
