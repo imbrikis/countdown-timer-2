@@ -11,7 +11,8 @@ const App = () => {
   const addCountdown = (titleInput, dateInput) => {
     console.log(dateInput)
     db.collection('countdowns').add({
-      countdown: [titleInput, new Date(dateInput).getTime()],
+      date: new Date(dateInput).getTime(),
+      title: titleInput,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
   }
@@ -22,7 +23,7 @@ const App = () => {
 
   useEffect(() => {
     db.collection('countdowns').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-      setCountdowns(snapshot.docs.map(doc => doc.data().countdown))
+      setCountdowns(snapshot.docs.map(doc => doc.data()))
     })
   }, [])
 
@@ -37,8 +38,8 @@ const App = () => {
           console.log(item)
           return (
             <Countdown 
-              titleInput={item[0]} 
-              dateInput={item[1]} 
+              title={item.title} 
+              date={item.date} 
               deleteCountdown={deleteCountdown}
             />
           )

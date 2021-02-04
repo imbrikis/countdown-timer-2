@@ -3,13 +3,13 @@ import './Countdown.css'
 import Timer from './Timer'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForeverOutlined';
 
-const Countdown = ({ titleInput, dateInput, deleteCountdown }) => {
+const Countdown = ({ title, date, deleteCountdown }) => {
 
   return (
     <div className="countdown">
-      <Timer dateInput={dateInput} />
-      <div className="countdown-title">{titleInput}</div>
-      <div className="date-description">({new Date(dateInput).toLocaleString()})</div>
+      <Timer date={date} />
+      <div className="countdown-title">{title}</div>
+      <div className="date-description">({new Date(date).toLocaleString()})</div>
       <div className="delete-icon" onClick={() => deleteCountdown()} ><DeleteForeverIcon fontSize="large" /></div>
     </div>
   )

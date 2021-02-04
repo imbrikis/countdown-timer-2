@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Timer.css'
 
-const Timer = ({ dateInput }) => {
+const Timer = ({ date }) => {
 
   const [timerDigits, setTimerDigits] = useState({
     days: '',
@@ -19,7 +19,7 @@ const Timer = ({ dateInput }) => {
   }
 
   const calcTimerDigits = i => {
-    let result = (new Date(dateInput).getTime()) - (new Date().getTime())
+    let result = (new Date(date).getTime()) - (new Date().getTime())
     setTimerDigits({
       ...timerDigits,
       days : Math.floor(result / 86400000),
@@ -30,7 +30,7 @@ const Timer = ({ dateInput }) => {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => calcTimerDigits(dateInput), 500)
+    const interval = setInterval(() => calcTimerDigits(date), 500)
     return () => clearInterval(interval)
   }, [])
 
