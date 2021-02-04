@@ -9,14 +9,13 @@ const App = () => {
   const [countdowns, setCountdowns] = useState([])
 
   const addCountdown = (titleInput, dateInput) => {
-    console.log(dateInput)
     db.collection('countdowns').add({
       date: new Date(dateInput).getTime(),
       title: titleInput,
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
   }
-  
+
   useEffect(() => {
     db.collection('countdowns').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
       setCountdowns(snapshot.docs.map(doc => ({id: doc.id, countdown: doc.data()})))

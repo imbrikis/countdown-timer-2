@@ -32,13 +32,11 @@ const AddEvent = ({ addCountdown }) => {
   const [titleInput, setTitleInput] = useState('')
 
   const handleClick = () => {
-    return ((dateInput && titleInput) ? 
-    (
-      addCountdown(titleInput, dateInput),
-      setTitleInput(''),
+    if (dateInput && titleInput) {
+      addCountdown(titleInput, dateInput)
+      setTitleInput('')
       setDateInput('')
-    ) :
-    console.log(`one or more entries are empty - date:${dateInput}, title:${titleInput}`)) 
+    }
   }
 
   return (
