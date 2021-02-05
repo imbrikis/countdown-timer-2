@@ -23,9 +23,9 @@
 
 .countdown-title {
   width: 100%;
-  height: 3.2rem;
+  height: 3.9rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   font-size: 1.6rem;
   font-weight: 600;
@@ -35,7 +35,7 @@
 
 .date-description {
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.6);
 }

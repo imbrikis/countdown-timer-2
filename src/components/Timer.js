@@ -36,30 +36,20 @@ const Timer = ({ date }) => {
 
   return (
     <div className="timer-container">
-      <table>
-          <thead>
-            <tr className="countdown-digits">
-              <th>{timerDigits.days ? timerDigits.days : "00"}</th>
-              <th>:</th>
-              <th>{timerDigits.hours ? timerDigits.hours : "00"}</th>
-              <th>:</th>
-              <th>{timerDigits.minutes ? timerDigits.minutes : "00"}</th>
-              <th>:</th>
-              <th>{timerDigits.seconds ? timerDigits.seconds : "00"}</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="digit-descriptors">
-              <td>DAYS</td>
-              <td></td>
-              <td>HOURS</td>
-              <td></td>
-              <td>MINUTES</td>
-              <td></td>
-              <td>SECONDS</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="cell digits">{timerDigits.days ? timerDigits.days : "00"}</div>
+      <div class="cell digit-colons">:</div>
+      <div class="cell digits">{timerDigits.hours ? timerDigits.hours : "00"}</div>
+      <div class="cell digit-colons">:</div>
+      <div class="cell digits">{timerDigits.minutes ? timerDigits.minutes : "00"}</div>
+      <div class="cell digit-colons">:</div>
+      <div class="cell digits">{timerDigits.seconds ? timerDigits.seconds : "00"}</div>
+      <div class="cell digit-descriptors">DAYS</div>
+      <div class="cell digit-descriptors"></div>
+      <div class="cell digit-descriptors">HOURS</div>
+      <div class="cell digit-descriptors"></div>
+      <div class="cell digit-descriptors">MINUTES</div>
+      <div class="cell digit-descriptors"></div>
+      <div class="cell digit-descriptors">SECONDS</div>
     </div>
   )
 }

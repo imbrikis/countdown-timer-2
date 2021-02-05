@@ -8,8 +8,8 @@ const Countdown = ({ item }) => {
 
   return (
     <div className="countdown">
-      <Timer date={item.countdown.date} />
       <div className="countdown-title">{item.countdown.title}</div>
+      <Timer date={item.countdown.date} />
       <div className="date-description">({new Date(item.countdown.date).toLocaleString()})</div>
       <div className="delete-icon" onClick={event => db.collection('countdowns').doc(item.id).delete()} ><DeleteForeverIcon fontSize="large" /></div>
     </div>

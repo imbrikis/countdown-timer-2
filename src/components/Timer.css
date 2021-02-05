@@ -1,18 +1,29 @@
+
 .timer-container {
   position: relative;
-  width: 100%;
-  height: 9.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
+  width: 62%;
+  height: 7.3rem;
+  display: grid;
+  grid-template-columns: 7fr 1fr 7fr 1fr 7fr 1fr 7fr;
   color: rgba(0, 0, 0, 0.5);
 }
 
-.countdown-digits {
-  font-size: 5.1rem;
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.digits {
+  font-size: 4.6rem;
+}
+
+.digit-colons {
+  font-size: 4.6rem;
 }
 
 .digit-descriptors {
   font-size: 0.9rem;
-  text-align: center;
 }
