@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import './Timer.css'
 
 const Timer = ({ date }) => {
 
@@ -36,20 +35,20 @@ const Timer = ({ date }) => {
 
   return (
     <div className="timer-container">
-      <div class="cell digits">{timerDigits.days ? timerDigits.days : "00"}</div>
-      <div class="cell digit-colons">:</div>
-      <div class="cell digits">{timerDigits.hours ? timerDigits.hours : "00"}</div>
-      <div class="cell digit-colons">:</div>
-      <div class="cell digits">{timerDigits.minutes ? timerDigits.minutes : "00"}</div>
-      <div class="cell digit-colons">:</div>
-      <div class="cell digits">{timerDigits.seconds ? timerDigits.seconds : "00"}</div>
-      <div class="cell digit-descriptors">DAYS</div>
-      <div class="cell digit-descriptors"></div>
-      <div class="cell digit-descriptors">HOURS</div>
-      <div class="cell digit-descriptors"></div>
-      <div class="cell digit-descriptors">MINUTES</div>
-      <div class="cell digit-descriptors"></div>
-      <div class="cell digit-descriptors">SECONDS</div>
+      <div className="cell digits">{timerDigits.days ? timerDigits.days : "00"}</div>
+      <div className="cell digit-separator">:</div>
+      <div className="cell digits">{timerDigits.hours ? timerDigits.hours : "00"}</div>
+      <div className="cell digit-separator">:</div>
+      <div className="cell digits">{timerDigits.minutes ? timerDigits.minutes : "00"}</div>
+      <div className="cell digit-separator">:</div>
+      <div className="cell digits">{timerDigits.seconds ? timerDigits.seconds : "00"}</div>
+      <div className="cell digit-descriptors">DAYS</div>
+      <div className="cell digit-descriptors"></div>
+      <div className="cell digit-descriptors">HOURS</div>
+      <div className="cell digit-descriptors"></div>
+      <div className="cell digit-descriptors">MINUTES</div>
+      <div className="cell digit-descriptors"></div>
+      <div className="cell digit-descriptors">SECONDS</div>
     </div>
   )
 }

@@ -56,3 +56,37 @@
 .delete-icon:active {
   color: rgba(0, 0, 0, 0.9);
 }
+
+@media screen and (max-width: 900px) {
+  .countdowns-container {
+    margin-top: 7.6rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .countdowns-container {
+    margin-top: 4.6rem;
+  }
+
+  .countdown {
+    height: 12.8rem;
+  }
+
+  .countdown:not(:last-child) {
+    margin-bottom: 2.6rem;
+  }
+
+  .countdown-title {
+    font-size: 1.4rem;
+    height: 3rem;
+  }
+
+  .date-description {
+    margin-top: 0.8rem;
+  }
+
+  .delete-icon {
+    bottom: 0.8rem;
+    right: 0.6rem;
+  }
+}

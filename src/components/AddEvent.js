@@ -22,7 +22,12 @@ const AddEvent = ({ addCountdown }) => {
       color: 'rgba(36, 36, 36, 0.75)',
       textAlign: 'center',
       height: '6.7rem',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      ['@media (max-width: 670px)'] : {
+        height: '3.3rem',
+        width: '100%',
+        marginTop: '1.5rem',
+      }
     }
   }));
 

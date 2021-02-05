@@ -20,10 +20,25 @@
   font-size: 4.6rem;
 }
 
-.digit-colons {
+.digit-separator {
   font-size: 4.6rem;
 }
 
 .digit-descriptors {
   font-size: 0.9rem;
+}
+
+@media screen and (max-width: 500px) {
+  .timer-container {
+    width: 80%;
+    height: fit-content;
+  }
+
+  .cell, .digit-separator {
+    font-weight: 500;
+  }
+
+  .digits, .digit-separator {
+    font-size: 3.4rem;
+  }
 }

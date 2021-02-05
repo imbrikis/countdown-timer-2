@@ -1,5 +1,4 @@
 import React from 'react'
-import './Countdown.css'
 import Timer from './Timer'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForeverOutlined';
 import db from '../firebase'
