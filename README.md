@@ -17,3 +17,5 @@
 - Google Firebase
 - Google Firestore
 - A dash of creativity
+
+![App Screenshot](./screenshot.png)
