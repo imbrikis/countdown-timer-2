@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://countdown-942d7.web.app/">
-    <img alt="albert logo" src="https://www.albertpadilla.com/static/logo-2eeae6eaf65305c1ff40d19bf7810f99.svg" width="180" />
+    <img alt="albert logo" src="https://www.albertpadilla.com/static/logo-00c3dae97b9196c0bfb18f27098c0890.svg" width="180" />
   </a>
 </p>
 <h1 align="center">
