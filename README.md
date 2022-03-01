@@ -1,5 +1,5 @@
 <h1 align="center">
-  Countdown Timer App
+  <a href="https://countdown-942d7.web.app/">Countdown Timer App</a>
 </h1>
 
 <h3 align="center">A project made with React, Google Firebase and Firestore for the database</h3>
